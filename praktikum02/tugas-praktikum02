@@ -1,0 +1,101 @@
+<?php
+//inputan
+$nama = $_POST["costumer"];
+$produk = $_POST["produk-pilihan"];
+$jumlah = $_POST["text"];
+
+//logika perhitungan nya
+if ($produk == "tv") {
+    $hasil = 4200000 * $jumlah;
+} elseif ($produk == "kulkas") {
+    $hasil = 3800000 * $jumlah;
+} elseif ($produk == "mesin_cuci"){
+    $hasil = 3900000 * $jumlah;
+}
+ else {
+    $hasil = "Masukkan Jumlah !";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>FORM BELANJA ONLINE</title>
+
+</head>
+<h1>Belanja Online</h1>
+<hr>
+<body>
+
+<form>
+  <div class="form-group row">
+    <label for="costumer" class="col-2 col-form-label">Costumer</label> 
+    <div class="col-10">
+      <input id="costumer" name="costumer" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2">Produk Pilihan</label> 
+    <div class="col-10">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="produk-pilihan" id="produk-pilihan_0" type="radio" class="custom-control-input" value="tv"> 
+        <label for="produk-pilihan_0" class="custom-control-label">TV</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="produk-pilihan" id="produk-pilihan_1" type="radio" class="custom-control-input" value="kulkas"> 
+        <label for="produk-pilihan_1" class="custom-control-label">Kulkas</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="produk-pilihan" id="produk-pilihan_2" type="radio" class="custom-control-input" value="mesin-cuci"> 
+        <label for="produk-pilihan_2" class="custom-control-label">Mesin Cuci</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="jumlah" class="col-2 col-form-label">Jumlah</label> 
+    <div class="col-10">
+      <input id="jumlah" name="jumlah" type="text" class="form-control">
+    </div>
+  </div> 
+  <div class="form-group row">
+    <div class="offset-2 col-10">
+      <button name="kirim" type="kirim" class="btn btn-success">Kirim</button>
+    </div>
+  </div>
+</form>
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="list-group">
+				 <a href="#" class="list-group-item list-group-item-action active">Daftar Harga</a>
+				<div class="list-group-item">
+					TV : 4.200.000
+				</div>
+                <div class="list-group-item">
+					Kulkas : 3.800.000
+				</div>
+                <div class="list-group-item">
+					Mesin Cuci : 3.900.000
+				</div>
+				
+				
+				</div> <a href="#" class="list-group-item list-group-item-action active justify-content-between">Harga dapat berubah setiap saat <span class="badge badge-light badge-pill"></span></a>
+			</div>
+		</div>
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+
+    
+</body>
+</html>
